@@ -21,16 +21,16 @@
         $_SESSION['Utente_Loggato'] = $arrayRes;
 
         if($arrayRes['Bannato']) {
-            header("Location: ..\Pagine\Bannato\bannato.html");
+            header("Location: ../Pagine/Bannato/bannato.html");
 
         } else if ($arrayRes['Amministratore']) {
-            header("Location: ..\Pagine\Amministratore\amministratore.php");
+            header("Location: ../Pagine/Amministratore/amministratore.php");
 
         } else {
-            header("Location: ..\Pagine\Utente\utente.php");
+            header("Location: ../Pagine/Utente/utente.php");
         }
     } else {
         //ha sbagliato la password...
-        header("Location: ..\index.html");
+        header("Location: ../index.html");
     }
 ?>

@@ -7,5 +7,5 @@
     $stmt->bind_param("sssss", $_POST['Nome'], $_POST['Cognome'], $_POST['Nickname'], $_POST['Email'], $password);
     $stmt->execute();
 
-    header("Location: ..\index.html");
+    header("Location: ../index.html");
 ?>

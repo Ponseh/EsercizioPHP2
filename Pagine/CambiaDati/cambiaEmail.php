@@ -13,14 +13,14 @@
 
             $stmt->execute();
             $_SESSION['Utente_Loggato']['Email'] = $_POST['Email2'];  //Perchè altrimenti nella session rimane il valore vecchio
-            header("Location: ..\..\index.html");
+            header("Location: ../../index.html");
         } else {
             //Ha sbagliato l'email...
-            header("Location: ..\..\Altro\errore.html");
+            header("Location: ../../Altro/errore.html");
         }
     } else {
         //Non proviene dal form qui sotto...
-        header("Location: ..\..\Altro\errore.html");
+        header("Location: ../../Altro/errore.html");
     }
 ?>
 

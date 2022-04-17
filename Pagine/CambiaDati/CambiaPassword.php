@@ -14,14 +14,14 @@
 
             $stmt->execute();
             $_SESSION['Utente_Loggato']['Password'] = $newPassword;  //Perchè altrimenti nella session rimane il valore vecchio
-            header("Location: ..\..\index.html");
+            header("Location: ../../index.html");
         } else {
             //Ha sbagliato la password...
-            header("Location: ..\..\Altro\errore.html");
+            header("Location: ../../Altro/errore.html");
         }
     } else {
         //Non proviene dal form qui sotto...
-        header("Location: ..\..\Altro\errore.html");
+        header("Location: ../../Altro/errore.html");
     }
 ?>
 

@@ -19,7 +19,7 @@
             header("Location: ..\..\Altro\errore.html");
         }
     } else {
-        //Non proviene dal form qui sotto...
+        Non proviene dal form qui sotto...
         header("Location: ..\..\Altro\errore.html");
     }
 ?>

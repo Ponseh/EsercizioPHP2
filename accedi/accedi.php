@@ -31,6 +31,6 @@
         }
     } else {
         //ha sbagliato la password...
-        header("Location: ../index.html");
+        header("Location: ../Altro/errore.html");
     }
 ?>

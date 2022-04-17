@@ -3,24 +3,19 @@
 
     require_once('..\..\database\database.php');
 
-    if(isset($_POST['Invia'])) {
-        if(password_verify($_POST['Password1'], $_SESSION['Utente_Loggato']['Password'])) {
+    if(password_verify($_POST['Password1'], $_SESSION['Utente_Loggato']['Password'])) {
 
-            $query = "UPDATE tUtenti SET Password = ? WHERE Email = '{$_SESSION['Utente_Loggato']['Email']}'";
-            $newPassword = password_hash($_POST['Password2'], PASSWORD_DEFAULT);
+        $query = "UPDATE tUtenti SET Password = ? WHERE Email = '{$_SESSION['Utente_Loggato']['Email']}'";
+        $newPassword = password_hash($_POST['Password2'], PASSWORD_DEFAULT);
 
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("s", $newPassword);
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $newPassword);
 
-            $stmt->execute();
-            $_SESSION['Utente_Loggato']['Password'] = $newPassword;  //Perchè altrimenti nella session rimane il valore vecchio
-            header("Location: ../../index.html");
-        } else {
-            //Ha sbagliato la password...
-            header("Location: ../../Altro/errore.html");
-        }
+        $stmt->execute();
+        $_SESSION['Utente_Loggato']['Password'] = $newPassword;  //Perchè altrimenti nella session rimane il valore vecchio
+        header("Location: ../../index.html");
     } else {
-        //Non proviene dal form qui sotto...
+        //Ha sbagliato la password...
         header("Location: ../../Altro/errore.html");
     }
 ?>

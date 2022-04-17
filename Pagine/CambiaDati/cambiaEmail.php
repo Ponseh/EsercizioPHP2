@@ -3,23 +3,18 @@
 
     require_once('..\..\database\database.php');
 
-    if(isset($_POST['Invia'])) {
-        if(!strcmp($_POST['Email1'], $_SESSION['Utente_Loggato']['Email'])) {
+    if(!strcmp($_POST['Email1'], $_SESSION['Utente_Loggato']['Email'])) {
 
-            $query = "UPDATE tUtenti SET Email = ? WHERE Nickname = '{$_SESSION['Utente_Loggato']['Nickname']}'";
+        $query = "UPDATE tUtenti SET Email = ? WHERE Nickname = '{$_SESSION['Utente_Loggato']['Nickname']}'";
 
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("s", $_POST['Email2']);
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $_POST['Email2']);
 
-            $stmt->execute();
-            $_SESSION['Utente_Loggato']['Email'] = $_POST['Email2'];  //Perchè altrimenti nella session rimane il valore vecchio
-            header("Location: ../../index.html");
-        } else {
-            //Ha sbagliato l'email...
-            header("Location: ../../Altro/errore.html");
-        }
+        $stmt->execute();
+        $_SESSION['Utente_Loggato']['Email'] = $_POST['Email2'];  //Perchè altrimenti nella session rimane il valore vecchio
+        header("Location: ../../index.html");
     } else {
-        //Non proviene dal form qui sotto...
+        //Ha sbagliato l'email...
         header("Location: ../../Altro/errore.html");
     }
 ?>

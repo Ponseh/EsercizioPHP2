@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once('..\..\database\database.php');
+    require_once('../../database/database.php');
 
     if(password_verify($_POST['Password1'], $_SESSION['Utente_Loggato']['Password'])) {
 

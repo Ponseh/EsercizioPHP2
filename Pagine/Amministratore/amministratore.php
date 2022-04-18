@@ -29,23 +29,30 @@
                 <th>Email</th>
                 <th>Amministratore</th>
                 <th>Bannato</th>
+                <th>Password</th>
             </tr>
             <?php
                 $result = $conn->query("SELECT Nome, Cognome, Nickname, Email, Amministratore, Bannato from tutenti");
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                            echo "<td>{$row['Nome']}</td>";
-                            echo "<td>{$row['Cognome']}</td>";
-                            echo "<td>{$row['Nickname']}</td>";
-                            echo "<td>{$row['Email']}</td>";
-                            echo "<td>";
-                            echo $row['Amministratore'] ? "Sì" : "No";
-                            echo "</td>";
-                            echo "<td>";
-                            echo $row['Bannato'] ? "Sì" : "No";
-                            echo "</td>";
-                        echo "</tr>";
+                        if(strcmp($row['Nickname'], $_SESSION['Utente_Loggato']['Nickname']) != 0) { //Per non mostrare se stesso
+                            echo "<tr>";
+                                echo "<td>{$row['Nome']}</td>";
+                                echo "<td>{$row['Cognome']}</td>";
+                                echo "<td>{$row['Nickname']}</td>";
+                                echo "<td>{$row['Email']}</td>";
+                                echo "<td>";
+                                echo $row['Amministratore'] ? "Sì" : "No";
+                                echo "</td>";
+                                echo "<td>";
+                                echo $row['Bannato'] ? "<a href='../CambiaDati/bannaOSbanna.php'>Sì</a>" : "<a href='../CambiaDati/bannaOSbanna.php'>No</a>";
+                                echo "</td>";
+                                echo "<td>";
+                                echo "Cambia password";
+                                echo "</td>";
+                            echo "</tr>";
+                            echo $row['Bannato'];
+                        }
                     }
                 } else {
                     //Non ci sono utenti (molto improbabile che accada, tuttavia...)
@@ -55,5 +62,3 @@
         </table>
     </body>
 </html>
-
-<!--  -->

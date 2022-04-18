@@ -55,7 +55,7 @@
                         }
                     }
                 } else {
-                    //Non ci sono utenti (molto improbabile che accada, tuttavia...)
+                    //Non ci sono utenti (impossibile che accada, tuttavia...)
                     echo "0 results";
                 }
             ?>

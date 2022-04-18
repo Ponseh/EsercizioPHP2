@@ -51,7 +51,6 @@
                                 echo "Cambia password";
                                 echo "</td>";
                             echo "</tr>";
-                            echo $row['Nickname']." ".$row['Bannato'];
                         }
                     }
                 } else {

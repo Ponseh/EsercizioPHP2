@@ -45,13 +45,13 @@
                                 echo $row['Amministratore'] ? "Sì" : "No";
                                 echo "</td>";
                                 echo "<td>";
-                                echo $row['Bannato'] ? "<a href='../CambiaDati/bannaOSbanna.php'>Sì</a>" : "<a href='../CambiaDati/bannaOSbanna.php'>No</a>";
+                                echo $row['Bannato'] ? "<a href='../CambiaDati/bannaOSbanna.php?nick={$row['Nickname']}&bannato={$row['Bannato']}'>Sì</a>" : "<a href='../CambiaDati/bannaOSbanna.php?nick={$row['Nickname']}&bannato={$row['Bannato']}'>No</a>";
                                 echo "</td>";
                                 echo "<td>";
                                 echo "Cambia password";
                                 echo "</td>";
                             echo "</tr>";
-                            echo $row['Bannato'];
+                            echo $row['Nickname']." ".$row['Bannato'];
                         }
                     }
                 } else {

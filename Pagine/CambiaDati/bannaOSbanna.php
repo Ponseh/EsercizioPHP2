@@ -3,9 +3,9 @@
 
     require_once('../../database/database.php');
 
-    $banned = !$_SESSION['Utente_Loggato']['Bannato'];
+    $banned = ($_GET['bannato'] == 1) ? 0 : 1;
 
-    $conn->query("UPDATE tUtenti SET Bannato = {$banned} WHERE Nickname = '{$_SESSION['Utente_Loggato']['Nickname']}'");
+    $conn->query("UPDATE tUtenti SET Bannato = {$banned} WHERE Nickname = '{$_GET['nick']}'");
 
     header("Location: ../Amministratore/amministratore.php");
 ?>

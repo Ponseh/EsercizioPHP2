@@ -59,5 +59,9 @@
                 }
             ?>
         </table>
+
+        <br><br>
+        
+        <a href="../../Altro/logout.php">Esegui il logout</a>
     </body>
 </html>

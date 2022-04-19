@@ -12,5 +12,9 @@
         <a href="../CambiaDati/cambiaNick.php">Cambia Nickname</a>
         <a href="../CambiaDati/cambiaEmail.php">Cambia Email</a>
         <a href="../CambiaDati/cambiaPassword.php">Cambia Password</a>
+
+        <br><br>
+
+        <a href="../../Altro/logout.php">Esegui il logout</a>
     </body>
 </html>

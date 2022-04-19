@@ -55,13 +55,13 @@
                     }
                 } else {
                     //Non ci sono utenti (impossibile che accada, tuttavia...)
-                    echo "0 results";
+                    echo "0 risultati";
                 }
             ?>
         </table>
 
         <br><br>
-        
+
         <a href="../../Altro/logout.php">Esegui il logout</a>
     </body>
 </html>

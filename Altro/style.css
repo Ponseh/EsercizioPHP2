@@ -1,0 +1,24 @@
+.rotate {
+  animation: rotation 3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+table, td, th {
+    word-wrap:break-word; /* va a capo quando serve (utile) */
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:60%;
+    table-layout:fixed;
+}
+
+h1 {
+    display: inline;
+}

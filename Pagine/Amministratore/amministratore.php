@@ -9,15 +9,7 @@
         <meta charset="utf-8">
     </head>
 
-    <style media="screen">
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            width:60%;
-            table-layout:fixed;
-            word-wrap:break-word; /* va a capo quando serve (utile) */
-        }
-    </style>
+    <link rel="stylesheet" href="../../Altro/style.css" type="text/css" media="screen">
 
     <body>
         Benvenuto amministratore <?php echo $_SESSION['Utente_Loggato']['Nickname']; ?> nella tua home page!<br>
